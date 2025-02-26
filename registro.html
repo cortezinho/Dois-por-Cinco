@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lacquer&amp;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-black flex items-center justify-center min-h-screen">
+    <div class="text-center text-white">
+      <img
+        alt="Decorative image above login card"
+        class="mx-auto mb-4 "
+        height="200"
+        src="./images/img/nextCoelho.png"
+        width="200"
+      />
+      <div class="bg-gray-700 p-6 rounded-lg shadow-lg w-80 mx-auto">
+        <div class="mb-4">
+          <label class="block text-gray-400 mb-2"> Email </label>
+          <input
+            class="w-full p-2 bg-gray-500 text-gray-300 rounded"
+            placeholder="E-mail"
+            type="text"
+          />
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-400 mb-2"> Senha </label>
+          <input
+            class="w-full p-2 bg-gray-500 text-gray-300 rounded"
+            placeholder="Senha"
+            type="password"
+          />
+          <div class="bg-gray-700 p-2 rounded-lg w-40 mx-auto"></div>
+          <div class="mb-4">
+            <label class="block text-gray-400 mb-2"> Confirme sua senha </label>
+            <input
+              class="w-full p-2 bg-gray-500 text-gray-300 rounded"
+              placeholder="Senha"
+              type="password"
+            />
+        </div>
+    <div class="mb-4 flex items-center justify-center">
+     <div class="g-recaptcha" data-sitekey="your_site_key">
+     </div>
+    </div>
+    <button class="w-full bg-white text-black py-2 rounded">
+     Registrar
+    </button>
+   </div>
+  </div>
+ </body>
+</html>
