@@ -8,6 +8,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./css/style.css">
   </head>
   <body class="bg-black">
     <header class="bg-black">
@@ -24,19 +25,12 @@
         <nav class="space-x-4">
           <a class="text-gray-400 hover:text-white" href="#"> Torneios </a>
           <a class="text-gray-400 hover:text-white" href="#"> Perfil </a>
-          <a class="text-gray-400 hover:text-white" href="login.html">
-            Sign in
-          </a>
-          <a
-            class="bg-gray-200 text-black px-4 py-2 rounded"
-            href="registro.html"
-          >
-            Registro
-          </a>
+          <a class="text-gray-400 hover:text-white" href="cadastro.html"> Sign in </a>
+          <a class="bg-gray-200 text-black px-4 py-2 rounded" href="cadastro.html"> Registro </a>
         </nav>
       </div>
     </header>
-    <main class="container mx-auto px-4 py-8">
+    <main class="container mx-auto px-4 py-8" style="display: flex; align-items: center; justify-content: center;">
       <div class="text-center mb-8">
         <img
           alt="eSportify banner"
@@ -47,91 +41,41 @@
         />
       </div>
       <h1 class="text-2xl font-bold mb-2">Torneios</h1>
-      <p class="text-gray-500 mb-8">Acompanhe</p>
 
         </aside>
         <section class="w-full md:w-3/4 px-4">
-          <div class="flex items-center mb-4">
-            <input
-              class="border rounded px-4 py-2 w-full"
-              placeholder="Search"
-              type="text"
-            />
-            <button class="bg-black text-white px-4 py-2 rounded ml-2">
-              New
-            </button>
-            <select class="border rounded px-4 py-2 ml-2">
-              <option>Price ascending</option>
-              <option>Price descending</option>
-              <option>Rating</option>
-            </select>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div class="bg-white p-4 rounded shadow">
-              <img
-                alt="Torneio 1"
-                class="w-full h-48 object-cover mb-4"
-                height="200"
-                src="images/NEXTPLAY.png"
-                width="200"
-              />
-              <h3 class="text-lg font-bold">Torneio 1</h3>
-              <p class="text-gray-500">$0</p>
-            </div>
-            <div class="bg-white p-4 rounded shadow">
-              <img
-                alt="Torneio 2"
-                class="w-full h-48 object-cover mb-4"
-                height="200"
-                src="images/NEXTPLAY.png"
-                width="200"
-              />
-              <h3 class="text-lg font-bold">Torneio 2</h3>
-              <p class="text-gray-500">$0</p>
-            </div>
-            <div class="bg-white p-4 rounded shadow">
-              <img
-                alt="Torneio 3"
-                class="w-full h-48 object-cover mb-4"
-                height="200"
-                src="images/NEXTPLAY.png"
-                width="200"
-              />
-              <h3 class="text-lg font-bold">Torneio 3</h3>
-              <p class="text-gray-500">$0</p>
-            </div>
-            <div class="bg-white p-4 rounded shadow">
-              <img
-                alt="Torneio 4"
-                class="w-full h-48 object-cover mb-4"
-                height="200"
-                src="images/NEXTPLAY.png"
-                width="200"
-              />
-              <h3 class="text-lg font-bold">Torneio 4</h3>
-              <p class="text-gray-500">$0</p>
-            </div>
-            <div class="bg-white p-4 rounded shadow">
-              <img
-                alt="Torneio 5"
-                class="w-full h-48 object-cover mb-4"
-                height="200"
-                src="images/NEXTPLAY.png"
-                width="200"
-              />
-              <h3 class="text-lg font-bold">Torneio 5</h3>
-              <p class="text-gray-500">$0</p>
-            </div>
-            <div class="bg-white p-4 rounded shadow">
-              <img
-                alt="Torneio 6"
-                class="w-full h-48 object-cover mb-4"
-                height="200"
-                src="images/NEXTPLAY.png"
-                width="200"
-              />
-              <h3 class="text-lg font-bold">Torneio 6</h3>
-              <p class="text-gray-500">$0</p>
+          <div class="divisao">
+            <div class="cards">
+                <div class="card red">
+                    <img src="./images/bunny maior white.png" alt="Torneio 1" class="card-image">
+                    <p class="tip">Torneios</p>
+                    <p class="second-text">Torneio 1</p>
+                </div>
+                <div class="card blue">
+                    <img src="./images/bunny maior white.png" alt="Torneio 2" class="card-image">
+                    <p class="tip">Torneios</p>
+                    <p class="second-text">Torneio 2</p>
+                </div>
+                <div class="card green">
+                    <img src="./images/bunny maior white.png" alt="Torneio 3" class="card-image">
+                    <p class="tip">Torneios</p>
+                    <p class="second-text">Torneio 3</p>
+                </div>
+                <div class="card yellow">
+                    <img src="./images/bunny maior white.png" alt="Torneio 4" class="card-image">
+                    <p class="tip">Torneios</p>
+                    <p class="second-text">Torneio 4</p>
+                </div>
+                <div class="card purple">
+                    <img src="./images/bunny maior white.png" alt="Torneio 5" class="card-image">
+                    <p class="tip">Torneios</p>
+                    <p class="second-text">Torneio 5</p>
+                </div>
+                <div class="card pink">
+                    <img src="./images/bunny maior white.png" alt="Torneio 6" class="card-image">
+                    <p class="tip">Torneios</p>
+                    <p class="second-text">Torneio 6</p>
+                </div>
             </div>
           </div>
           <div class="flex justify-between items-center mt-8">
@@ -141,8 +85,9 @@
               <a class="text-gray-400 hover:text-white" href="#"> 2 </a>
               <a class="text-gray-400 hover:text-white" href="#"> 3 </a>
               <span class="text-gray-400"> ... </span>
-              <a class="text-gray-400 hover:text-white" href="#"> 67 </a>
-              <a class="text-gray-400 hover:text-white" href="#"> 68 </a>
+              <a class="text-gray-400 hover:text-white" href="#"> 8 </a>
+              <a class="text-gray-400 hover:text-white" href="#"> 9 </a>
+              <a class="text-gray-400 hover:text-white" href="#"> 10 </a>
             </div>
             <a class="text-gray-400 hover:text-white" href="#"> Next → </a>
           </div>
@@ -188,34 +133,7 @@
                   UX design
                 </a>
               </li>
-              <li>
-                <a class="text-gray-700 hover:text-black" href="#">
-                  Wireframing
-                </a>
-              </li>
-              <li>
-                <a class="text-gray-700 hover:text-black" href="#">
-                  Diagramming
-                </a>
-              </li>
-              <li>
-                <a class="text-gray-700 hover:text-black" href="#">
-                  Brainstorming
-                </a>
-              </li>
-              <li>
-                <a class="text-gray-700 hover:text-black" href="#"> Design </a>
-              </li>
-              <li>
-                <a class="text-gray-700 hover:text-black" href="#">
-                  Online whiteboard
-                </a>
-              </li>
-              <li>
-                <a class="text-gray-700 hover:text-black" href="#">
-                  Team collaboration
-                </a>
-              </li>
+             
             </ul>
           </div>
           <div class="w-full md:w-1/4 px-4 mb-8 md:mb-0">
@@ -229,29 +147,7 @@
                   Prototyping
                 </a>
               </li>
-              <li>
-                <a class="text-gray-700 hover:text-black" href="#">
-                  Development features
-                </a>
-              </li>
-              <li>
-                <a class="text-gray-700 hover:text-black" href="#">
-                  Design systems
-                </a>
-              </li>
-              <li>
-                <a class="text-gray-700 hover:text-black" href="#">
-                  Collaboration features
-                </a>
-              </li>
-              <li>
-                <a class="text-gray-700 hover:text-black" href="#">
-                  Design process
-                </a>
-              </li>
-              <li>
-                <a class="text-gray-700 hover:text-black" href="#"> FigJam </a>
-              </li>
+              
             </ul>
           </div>
           <div class="w-full md:w-1/4 px-4 mb-8 md:mb-0">
@@ -265,27 +161,7 @@
                   Best practices
                 </a>
               </li>
-              <li>
-                <a class="text-gray-700 hover:text-black" href="#"> Colors </a>
-              </li>
-              <li>
-                <a class="text-gray-700 hover:text-black" href="#">
-                  Color wheel
-                </a>
-              </li>
-              <li>
-                <a class="text-gray-700 hover:text-black" href="#"> Support </a>
-              </li>
-              <li>
-                <a class="text-gray-700 hover:text-black" href="#">
-                  Developers
-                </a>
-              </li>
-              <li>
-                <a class="text-gray-700 hover:text-black" href="#">
-                  Resource library
-                </a>
-              </li>
+              
             </ul>
           </div>
         </div>

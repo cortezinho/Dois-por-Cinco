@@ -1,0 +1,81 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.cards .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 250px;  /* Aumentei um pouco a altura para acomodar a imagem */
+    width: 250px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: 400ms;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.cards .card img.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Para garantir que a imagem ocupe todo o espaço */
+    border-radius: 10px; /* Para que a imagem tenha bordas arredondadas no topo */
+}
+
+.cards .red {
+    background-color: #f43f5e;
+}
+
+.cards .blue {
+    background-color: #3b82f6;
+}
+
+.cards .green {
+    background-color: #22c55e;
+}
+
+.cards .yellow {
+    background-color: #f59e0b;
+}
+
+.cards .purple {
+    background-color: #8b5cf6;
+}
+
+.cards .pink {
+    background-color: #ec4899;
+}
+
+.cards .card p.tip {
+    font-size: 1em;
+    font-weight: 700;
+    position: absolute;
+    bottom: 40px;
+    left: 10px;
+    right: 10px;
+    color: white;
+}
+
+.cards .card p.second-text {
+    font-size: .7em;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    color: white;
+}
+
+.cards .card:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.cards:hover > .card:not(:hover) {
+    filter: blur(10px);
+    transform: scale(0.9, 0.9);
+}
