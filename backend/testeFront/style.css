@@ -1,8 +1,7 @@
-/* styles.css */
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #d1c3c3;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,11 +9,11 @@ body {
     margin: 0;
 }
 
-.form-container {
+.form-container {   
     background-color: #fff;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
     width: 300px;
 }
 
