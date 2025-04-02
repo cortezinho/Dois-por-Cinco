@@ -1,0 +1,30 @@
+/* Estilos iniciais para a seção */
+#scrollSection {
+    opacity: 1; /* Sempre visível */
+    transform: translateY(0); /* Nenhum deslocamento inicial */
+  }
+  
+  /* Ajustes adicionais podem ser feitos conforme necessidade */
+  @keyframes pulseGlow {
+    0% {
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 15px rgba(255, 255, 255, 1);
+    }
+    100% {
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+  }
+  
+  .animated-image {
+    animation: pulseGlow 2s infinite; /* Aplica o brilho pulsante */
+    border-radius: 50%; /* Deixa a imagem redonda, se for uma imagem quadrada */
+    transition: transform 0.3s ease-in-out; /* Animação para efeito de escala */
+  }
+  
+  .animated-image:hover {
+    transform: scale(1.1); /* Quando a imagem for sobrevoada pelo mouse, ela aumenta um pouco */
+  }
+    
+  
