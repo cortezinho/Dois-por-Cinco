@@ -21,6 +21,17 @@ public class RegistroDTO {
     @Size(min = 8, message = "Senha deve ter no mínimo 8 caracteres")
     private String senha;
 
+    public RegistroDTO() {
+
+    }
+
+    public RegistroDTO(String nome, String cpf, String email, String senha) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.email = email;
+        this.senha = senha;
+    }
+
     public String getNome() { return nome; }
     public void setNome(String nome) { this.nome = nome; }
 

@@ -15,8 +15,7 @@ public class Usuario {
     @Column(nullable = false, unique = true, length = 11)
     private String cpf;
 
-    @Column(nullable = false, unique = true, length = 20)
-    private String usuario;
+
 
     @Column(nullable = false)
     private String senha;
@@ -24,10 +23,9 @@ public class Usuario {
     @Column(nullable = false)
     private  String email;
 
-    public Usuario(String nome, String cpf, String usuario, String senha, String email) {
+    public Usuario(String nome, String cpf, String senha, String email) {
         this.nome = nome;
         this.cpf = cpf;
-        this.usuario = usuario;
         this.senha = senha;
         this.email = email;
     }
@@ -59,13 +57,7 @@ public class Usuario {
         this.cpf = cpf;
     }
 
-    public String getUsuario() {
-        return usuario;
-    }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
 
     public String getSenha() {
         return senha;

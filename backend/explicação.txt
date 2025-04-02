@@ -1,0 +1,17 @@
+dto - dto especifica qual objeto a controller vai receber
+
+
+controller - rebece a requisição (dados) e retorna a mensagem correta para o usuário, fica com os endpoints
+
+model/entity - são as tabelas do banco
+
+
+repository - são as ações que vão ser realizadas no banco
+
+servisse - é a regra de negocio, onde fica a logica do sistema
+
+
+request e response é quando o objeto de entrada e diferente do objeto do de saída. 
+Ex: você quer saber os alunos do curso então você vai pegar o nome do curso e o id, mas o retorno vai conter os alunos e o professor que da aula..
+
+

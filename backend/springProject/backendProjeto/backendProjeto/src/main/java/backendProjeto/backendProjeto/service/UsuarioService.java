@@ -4,7 +4,11 @@ import backendProjeto.backendProjeto.dto.RegistroDTO;
 import backendProjeto.backendProjeto.model.Usuario;
 import backendProjeto.backendProjeto.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
+
+@Service
 public class UsuarioService {
 
    @Autowired
@@ -19,6 +23,10 @@ public class UsuarioService {
 
         return usuario;
    }
+
+    public List<Usuario> getAll(){
+        return usuarioRepository.findAll();
+    }
 
    public RegistroDTO toDTO(Usuario usuario){
        RegistroDTO registroDTO = new RegistroDTO();
