@@ -1,58 +1,45 @@
+/* Wrapper que contém todos os cards */
 .cards {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    justify-content: space-between;
+    gap: 20px; /* Maior espaçamento entre os cards */
+    justify-content: center; /* Para garantir que os cards fiquem alinhados no centro */
+    padding: 20px;
 }
 
-.cards .card {
+/* Card individual */
+.cards .card, .car1 {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    height: 250px;  /* Aumentei um pouco a altura para acomodar a imagem */
-    width: 250px;
+    height: 250px; /* Mantém o tamanho fixo de altura */
+    width: 250px;  /* Largura de 250px por card */
     border-radius: 10px;
     color: white;
     cursor: pointer;
     transition: 400ms;
-    margin-bottom: 15px;
     position: relative;
 }
 
-.cards .card img.card-image {
+/* Imagem do card */
+.cards .card img.card-image, .car1 img.card-image {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Para garantir que a imagem ocupe todo o espaço */
-    border-radius: 10px; /* Para que a imagem tenha bordas arredondadas no topo */
+    border-radius: 10px; /* Bordas arredondadas no topo da imagem */
 }
 
-.cards .red {
-    background-color: #f43f5e;
-}
+/* Cores dos cards */
 
 .cards .blue {
     background-color: #3b82f6;
 }
 
-.cards .green {
-    background-color: #22c55e;
-}
 
-.cards .yellow {
-    background-color: #f59e0b;
-}
-
-.cards .purple {
-    background-color: #8b5cf6;
-}
-
-.cards .pink {
-    background-color: #ec4899;
-}
-
-.cards .card p.tip {
+/* Texto dentro do card */
+.cards .card p.tip, .car1 .tip {
     font-size: 1em;
     font-weight: 700;
     position: absolute;
@@ -62,7 +49,7 @@
     color: white;
 }
 
-.cards .card p.second-text {
+.cards .card p.second-text, .car1 .second-text {
     font-size: .7em;
     position: absolute;
     bottom: 10px;
@@ -71,11 +58,84 @@
     color: white;
 }
 
-.cards .card:hover {
-    transform: scale(1.1, 1.1);
+/* Efeito de hover no card */
+.cards .card:hover, .car1:hover {
+    transform: scale(1.1);
 }
 
-.cards:hover > .card:not(:hover) {
+.cards .card:hover .card-btn, .car1:hover .card-btn {
+    opacity: 1;
+    scale: 1;
+}
+
+.cards:hover > .card:not(:hover), .car1:hover .overlay {
     filter: blur(10px);
-    transform: scale(0.9, 0.9);
+    transform: scale(0.9);
+}
+
+/* Overlay que aparece quando o card é hover */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.car1:hover .overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Botão dentro do card */
+.car1 .card-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-weight: 600;
+    padding: 10px 20px;
+    font-size: 16px;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 999;
+    border: none;
+    opacity: 0;
+    scale: 0;
+    transform-origin: 0 0;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.car1 .card-btn:hover {
+    box-shadow: 0 0 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.car1 .card-btn:active {
+    scale: 0.95;
+}
+
+/* Efeito de expansão do overlay */
+.overlay::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(-45deg, #f89b2980 0%, #ff0f7b80 100% );
+    transition: transform 0.5s ease;
+}
+
+.car1:hover .overlay::after {
+    transform: translate(-50%, -50%) scale(2);
 }
