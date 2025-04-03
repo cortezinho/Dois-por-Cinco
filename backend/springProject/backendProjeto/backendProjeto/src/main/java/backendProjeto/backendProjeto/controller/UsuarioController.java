@@ -10,10 +10,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/usuario")
-public class UsuarioController {
+public class  UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
 
@@ -27,4 +28,15 @@ public class UsuarioController {
         RegistroDTO usuario = usuarioService.saveDTO(registroDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(usuario);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity <RegistroDTO> update(@PathVariable Long id, @Valid @RequestBody RegistroDTO usuarioDTO){
+        Optional<RegistroDTO> registroDTOOptional = usuarioService.updateUsuario(id, usuarioDTO);
+            if (registroDTOOptional.isPresent()){
+                return ResponseEntity.ok(registroDTOOptional.get());
+            } else {
+                return ResponseEntity.notFound().build();
+            }
+    }
+
 }

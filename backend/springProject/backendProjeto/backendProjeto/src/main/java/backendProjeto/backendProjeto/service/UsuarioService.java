@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UsuarioService {
@@ -42,4 +43,22 @@ public class UsuarioService {
         Usuario usuarioBd = usuarioRepository.save(usuario);
         return this.toDTO(usuarioBd);
     }
+
+   public Optional<RegistroDTO> updateUsuario(Long id, RegistroDTO registroDTO) {
+       Optional<Usuario> optionalUsuario = usuarioRepository.findById(id);
+       if (optionalUsuario.isPresent()){
+           Usuario usuario = optionalUsuario.get();
+           usuario.setNome(usuario.getNome());
+           usuario.setCpf(usuario.getCpf());
+           usuario.setEmail(usuario.getEmail());
+           usuario.setSenha(usuario.getSenha());
+
+           Usuario usuarioUpdate = usuarioRepository.save(usuario);
+
+           return Optional.of(this.toDTO(usuarioUpdate));
+       }else {
+           return Optional.empty();
+       }
+
+   }
 }
