@@ -14,7 +14,7 @@
     <!-- credits to the writter @leonam-silva-de-souza -->
     <div class="container">
       <div class="form-box login">
-        <form action="#">
+        <form action="#" id="cadastroUsuario">
           <h1>Login</h1>
           <div class="input-box">
             <input type="text" placeholder="Usuário" required />
@@ -36,15 +36,19 @@
         <form action="#">
           <h1>Cadastro</h1>
           <div class="input-box">
-            <input type="text" placeholder="Usuário" required />
+            <input type="text" id="usuarioInput" name="usuarioInput" placeholder="Usuário" required />
             <i class="bx bxs-user"></i>
           </div>
           <div class="input-box">
-            <input type="email" placeholder="Email" required />
+            <input type="text" id="cpfInput" name="cpfInput" placeholder="CPF" required />
+            <i class="bx bxs-cpf"></i>
+          </div>  
+          <div class="input-box">
+            <input type="email" id="emailInput" name="emailInput" placeholder="Email" required />
             <i class="bx bxs-envelope"></i>
           </div>
           <div class="input-box">
-            <input type="password" placeholder="Senha" required />
+            <input type="password" id="senhaInput" name="senhaInput" placeholder="Senha" required />
             <i class="bx bxs-lock-alt"></i>
           </div>
           <button type="submit" class="btn">Cadastrar</button>
