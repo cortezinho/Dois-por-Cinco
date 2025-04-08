@@ -44,6 +44,14 @@ public class UsuarioService {
         return this.toDTO(usuarioBd);
     }
 
+    public Usuario login(String nome, String senha) {
+        Usuario usuario = usuarioRepository.findByNome(nome);
+        if (usuario != null && usuario.getSenha().equals(senha)) {
+            return usuario;
+        }
+        return null;
+    }
+
    public Optional<RegistroDTO> updateUsuario(Long id, RegistroDTO registroDTO) {
        Optional<Usuario> optionalUsuario = usuarioRepository.findById(id);
        if (optionalUsuario.isPresent()){

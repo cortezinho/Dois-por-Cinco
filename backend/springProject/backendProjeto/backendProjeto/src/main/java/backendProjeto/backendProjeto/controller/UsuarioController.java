@@ -1,6 +1,8 @@
 package backendProjeto.backendProjeto.controller;
 
+import backendProjeto.backendProjeto.dto.LoginDTO;
 import backendProjeto.backendProjeto.dto.RegistroDTO;
+import backendProjeto.backendProjeto.dto.UsuarioResponseDTO;
 import backendProjeto.backendProjeto.model.Usuario;
 import backendProjeto.backendProjeto.service.UsuarioService;
 import jakarta.validation.Valid;
@@ -27,6 +29,16 @@ public class  UsuarioController {
     public ResponseEntity<RegistroDTO> created( @RequestBody RegistroDTO registroDTO){
         RegistroDTO usuarioBd = usuarioService.saveDTO(registroDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(usuarioBd);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<UsuarioResponseDTO> login(@RequestBody LoginDTO loginDTO) {
+        Usuario usuario = usuarioService.login(loginDTO.getNome(), loginDTO.getSenha());
+        if(usuario != null) {
+            UsuarioResponseDTO response = new UsuarioResponseDTO(usuario);
+            return ResponseEntity.ok(response);
+        }
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
     }
 
     @PutMapping("/{id}")

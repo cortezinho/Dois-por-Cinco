@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const loginBtn = document.querySelector('.login-btn');
     const formCadastro = document.getElementById('formCadastro');
   
-    // Alternar entre tela de login e cadastro
     registerBtn.addEventListener('click', () => {
       container.classList.add('active');
       console.log("Entrei");
@@ -51,5 +50,47 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("Erro ao cadastrar. Verifique os dados.");
       });
     }
+
+
+    document.getElementById('btnLogin').addEventListener('click', () =>{
+        const dados = {
+          nome : document.getElementById('inputNomeLogin').value,
+          senha: document.getElementById('inputSenhaLogin').value
+        };
+
+        loginUsuario(dados);
+    })
+
+    function loginUsuario(dados) {
+      fetch("http://localhost:8080/usuario/login", {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            nome: dados.nome,
+            senha: dados.senha
+        })
+      })
+      .then(response => {
+          if (response.ok) {
+              return response.json();
+          } else {
+              throw new Error("Credenciais inválidas");
+          }
+      })
+      .then(data => {
+          console.log("Login bem-sucedido:", data);
+          alert("Login realizado com sucesso!");
+          
+          localStorage.setItem('usuarioLogado', JSON.stringify(data));
+          
+          window.location.href = "";
+      })
+      .catch(erro => {
+          console.error("Erro no login:", erro);
+          alert("Nome de usuário ou senha incorretos");
+      });
+  }
   });
   
