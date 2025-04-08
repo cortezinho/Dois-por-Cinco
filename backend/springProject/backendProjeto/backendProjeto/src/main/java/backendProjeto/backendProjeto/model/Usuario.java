@@ -15,8 +15,6 @@ public class Usuario {
     @Column(nullable = false, unique = true, length = 11)
     private String cpf;
 
-
-
     @Column(nullable = false)
     private String senha;
 
@@ -30,7 +28,7 @@ public class Usuario {
         this.email = email;
     }
 
-    public Usuario (){
+    public Usuario() {
     }
 
     public Long getId() {
@@ -56,7 +54,6 @@ public class Usuario {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
-
 
 
     public String getSenha() {

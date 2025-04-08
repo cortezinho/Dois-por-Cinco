@@ -15,16 +15,15 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("Voltei");
     });
   
-    formCadastro.addEventListener("submit", (event) => {
-      event.preventDefault();
-  
+    document.getElementById('btnCadastro').addEventListener('click', () => {  
       const dados = {
-        usuario: document.getElementById('usuarioInput').value,
+        nome: document.getElementById('usuarioInput').value,
         cpf: document.getElementById('cpfInput').value,
-        email: document.getElementById('emailInput').value,
-        senha: document.getElementById('senhaInput').value
+        senha: document.getElementById('senhaInput').value,
+        email: document.getElementById('emailInput').value
       };
-  
+      console.log(dados);
+      
       cadastrarUsuario(dados);
     });
   

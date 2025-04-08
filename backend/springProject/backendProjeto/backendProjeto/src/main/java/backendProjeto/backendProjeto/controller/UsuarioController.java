@@ -24,9 +24,9 @@ public class  UsuarioController {
     }
 
     @PostMapping
-    public ResponseEntity<RegistroDTO> created(@Valid @RequestBody RegistroDTO registroDTO){
-        RegistroDTO usuario = usuarioService.saveDTO(registroDTO);
-        return ResponseEntity.status(HttpStatus.CREATED).body(usuario);
+    public ResponseEntity<RegistroDTO> created( @RequestBody RegistroDTO registroDTO){
+        RegistroDTO usuarioBd = usuarioService.saveDTO(registroDTO);
+        return ResponseEntity.status(HttpStatus.CREATED).body(usuarioBd);
     }
 
     @PutMapping("/{id}")
