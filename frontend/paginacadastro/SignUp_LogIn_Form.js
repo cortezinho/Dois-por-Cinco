@@ -26,35 +26,17 @@ document.addEventListener("DOMContentLoaded", () => {
     cadastrarUsuario(dados);
   });
 
-<<<<<<< HEAD
   async function cadastrarUsuario(dados) {
     try {
-      const response = await fetch("http://localhost:8080/usuario", {
+      const response = await fetch('http://localhost:8080/usuario', {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(dados)
       });
+
       const data = await response.json();
-=======
-  function cadastrarUsuario(dados) {
-    fetch("http://localhost:8080/usuario", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(dados)
-    })
-    .then(response => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("Erro no cadastro: " + response.status);
-      }
-    })
-    .then(data => {
->>>>>>> 177f539a8aa25d8c40d278ce3d900ea1e785b2cb
       console.log("Cadastro realizado com sucesso:", data);
       alert("Usuário cadastrado!");
       window.location.reload();
@@ -73,35 +55,26 @@ document.addEventListener("DOMContentLoaded", () => {
       loginUsuario(dados);
   })
 
-  function loginUsuario(dados) {
-    fetch("http://localhost:8080/usuario/login", {
-        method: "POST",
+  async function loginUsuario(dados) {
+    try {
+      const response = await fetch ('http://localhost:8080/usuario/login', {
+        method: 'POST',
         headers: {
-            "Content-Type": "application/json"
+          "Content-Type": "application/json"
         },
-        body: JSON.stringify({
-          nome: dados.nome,
-          senha: dados.senha
-      })
-    })
-    .then(response => {
-        if (response.ok) {
-            return response.json();
-        } else {
-            throw new Error("Credenciais inválidas");
-        }
-    })
-    .then(data => {
-        console.log("Login bem-sucedido:", data);
-        alert("Login realizado com sucesso!");
-        
-        localStorage.setItem('usuarioLogado', JSON.stringify(data));
-        
-        window.location.href = "/frontend/torneios.HTML"
-    })
-    .catch(erro => {
-        console.error("Erro no login:", erro);
-        alert("Nome de usuário ou senha incorretos");
-    });
-}
+        body: JSON.stringify(dados)
+      });
+
+      const data = await response.json();
+      console.log("login realizado com sucesso:", data);
+      alert("Login efetuado com sucesso!");
+      window.location.reload();
+
+    }catch (erro) {
+      console.error("Erro ao logar:", erro);
+      alert("Erro ao fazer login. Verifique os dados.");
+    }
+
+  }
+
 });
