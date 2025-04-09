@@ -92,7 +92,7 @@
 }
 
 /* Botão dentro do card */
-.car1 .card-btn {
+.car1 .car1-btn {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -115,11 +115,11 @@
     transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
-.car1 .card-btn:hover {
+.car1 .car1-btn:hover {
     box-shadow: 0 0 0px 5px rgba(0, 0, 0, 0.3);
 }
 
-.car1 .card-btn:active {
+.car1 .car1-btn:active {
     scale: 0.95;
 }
 
@@ -132,10 +132,72 @@
     transform: translate(-50%, -50%) scale(0);
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(-45deg, #f89b2980 0%, #ff0f7b80 100% );
+    background-image: linear-gradient(-45deg, #0099ff80 0%, #d400ff80 100% );
     transition: transform 0.5s ease;
 }
 
 .car1:hover .overlay::after {
     transform: translate(-50%, -50%) scale(2);
+}
+/* From Uiverse.io by Cevorob */ 
+.button1 {
+    position: relative;
+    height: 50px;
+    padding: 0 30px;
+    border: 2px solid #ffffff;
+    background: #000000;
+    user-select: none;
+    white-space: nowrap;
+    transition: all .05s linear;
+    font-family: inherit;
+   }
+   
+   .button1:before, .button1:after {
+    content: "";
+    position: absolute;
+    background: #000000;
+    transition: all .2s linear;
+   }
+   
+   .button1:before {
+    width: calc(100% + 6px);
+    height: calc(100% - 16px);
+    top: 8px;
+    left: -3px;
+   }
+   
+   .button1:after {
+    width: calc(100% - 16px);
+    height: calc(100% + 6px);
+    top: -3px;
+    left: 8px;
+   }
+   
+   .button1:hover {
+    cursor: crosshair;
+   }
+   
+   .button1:active {
+    transform: scale(0.95);
+   }
+   
+   .button1:hover:before {
+    height: calc(100% - 32px);
+    top: 16px;
+   }
+   
+   .button1:hover:after {
+    width: calc(100% - 32px);
+    left: 16px;
+   }
+   
+   .button1 span {
+    font-size: 15px;
+    z-index: 3;
+    position: relative;
+    font-weight: 600;
+   }
+
+.span-button1{
+    color: #ffffff;
 }

@@ -9,3 +9,4 @@ function toggleInfo(element) {
     element.textContent = "Leia menos";
   }
 }
+  
