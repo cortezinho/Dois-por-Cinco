@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
           
           localStorage.setItem('usuarioLogado', JSON.stringify(data));
           
-          window.location.href = "";
+          window.location.href = "../torneios.HTML";
       })
       .catch(erro => {
           console.error("Erro no login:", erro);
