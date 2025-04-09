@@ -22,10 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
       email: document.getElementById('emailInput').value
     };
     console.log(dados);
-   
+    
     cadastrarUsuario(dados);
   });
 
+<<<<<<< HEAD
   async function cadastrarUsuario(dados) {
     try {
       const response = await fetch("http://localhost:8080/usuario", {
@@ -36,6 +37,24 @@ document.addEventListener("DOMContentLoaded", () => {
         body: JSON.stringify(dados)
       });
       const data = await response.json();
+=======
+  function cadastrarUsuario(dados) {
+    fetch("http://localhost:8080/usuario", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(dados)
+    })
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Erro no cadastro: " + response.status);
+      }
+    })
+    .then(data => {
+>>>>>>> 177f539a8aa25d8c40d278ce3d900ea1e785b2cb
       console.log("Cadastro realizado com sucesso:", data);
       alert("Usuário cadastrado!");
       window.location.reload();
@@ -55,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
   function loginUsuario(dados) {
-    fetch("http://localhost:8080/usuario/login&quot;, {
+    fetch("http://localhost:8080/usuario/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -75,9 +94,9 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(data => {
         console.log("Login bem-sucedido:", data);
         alert("Login realizado com sucesso!");
-       
+        
         localStorage.setItem('usuarioLogado', JSON.stringify(data));
-       
+        
         window.location.href = "/frontend/torneios.HTML"
     })
     .catch(erro => {
