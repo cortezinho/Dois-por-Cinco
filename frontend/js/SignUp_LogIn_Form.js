@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(data => {
         console.log("Cadastro realizado com sucesso:", data);
         alert("Usuário cadastrado!");
+        window.location.reload();
       })
       .catch(erro => {
         console.error("Erro ao cadastrar:", erro);
@@ -85,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
           
           localStorage.setItem('usuarioLogado', JSON.stringify(data));
           
-          window.location.href = "";
+          window.location.href = "/frontend/torneios.HTML"
       })
       .catch(erro => {
           console.error("Erro no login:", erro);
