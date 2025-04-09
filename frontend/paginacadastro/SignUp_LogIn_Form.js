@@ -22,12 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
       email: document.getElementById('emailInput').value
     };
     console.log(dados);
-   
+    
     cadastrarUsuario(dados);
   });
 
   function cadastrarUsuario(dados) {
-    fetch("http://localhost:8080/usuario&quot;, {
+    fetch("http://localhost:8080/usuario", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
   function loginUsuario(dados) {
-    fetch("http://localhost:8080/usuario/login&quot;, {
+    fetch("http://localhost:8080/usuario/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -83,9 +83,9 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(data => {
         console.log("Login bem-sucedido:", data);
         alert("Login realizado com sucesso!");
-       
+        
         localStorage.setItem('usuarioLogado', JSON.stringify(data));
-       
+        
         window.location.href = "/frontend/torneios.HTML"
     })
     .catch(erro => {
