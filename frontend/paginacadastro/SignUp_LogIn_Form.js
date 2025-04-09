@@ -26,33 +26,25 @@ document.addEventListener("DOMContentLoaded", () => {
     cadastrarUsuario(dados);
   });
 
-  function cadastrarUsuario(dados) {
-    fetch("http://localhost:8080/usuario&quot;, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(dados)
-    })
-    .then(response => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("Erro no cadastro: " + response.status);
-      }
-    })
-    .then(data => {
+  async function cadastrarUsuario(dados) {
+    try {
+      const response = await fetch("http://localhost:8080/usuario", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(dados)
+      });
+      const data = await response.json();
       console.log("Cadastro realizado com sucesso:", data);
       alert("Usuário cadastrado!");
       window.location.reload();
-    })
-    .catch(erro => {
+    } catch (erro) {
       console.error("Erro ao cadastrar:", erro);
       alert("Erro ao cadastrar. Verifique os dados.");
-    });
+    }
   }
-
-
+  
   document.getElementById('btnLogin').addEventListener('click', () =>{
       const dados = {
         nome : document.getElementById('inputNomeLogin').value,
