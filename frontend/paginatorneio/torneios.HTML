@@ -14,10 +14,11 @@
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
       <img alt="eSportify logo" class="h-12" height="50" src="images/bunny maior.png" width="50" />
       <nav class="space-x-4">
-        <a class="text-gray-400 hover:text-white" href="#"> Torneios </a>
-        <a class="text-gray-400 hover:text-white" href="#"> Perfil </a>
-        <a class="text-gray-400 hover:text-white" href="cadastro.html"> Sign in </a>
-        <a class="bg-gray-200 text-black px-4 py-2 rounded" href="cadastro.html"> Registro </a>
+        <a class="text-gray-400 hover:text-white" id="Torneio" href="#"> Torneios </a>
+        <a class="text-gray-400 hover:text-white" id="Sair" href="#"> Sair </a>
+          <a class="text-gray-400 hover:text-white" id="Perfil" href="#"> Perfil </a>
+        <a class="text-gray-400 hover:text-white" id="cadastro" href="cadastro.html"> Sign in </a>
+        <a class="bg-gray-200 text-black px-4 py-2 rounded" id="Registro" href="cadastro.html"> Registro </a>
       </nav>
     </div>
   </header>
@@ -156,15 +157,6 @@
     </div>
   </footer>
 
-  <script>
-    function changeImage(imagePath) {
-      // Achar o elemento da imagem na div
-      const bannerImage = document.getElementById('bannerImage');
-
-      // Atualizar o src com o caminho da nova imagem
-      bannerImage.src = imagePath;
-    }
-  </script>
-</body>
-
+    <script src="/frontend/paginatorneio/torneio.js"></script>
+  </body>
 </html>
