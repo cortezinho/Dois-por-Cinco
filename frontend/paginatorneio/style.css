@@ -201,3 +201,82 @@
 .span-button1{
     color: #ffffff;
 }
+
+
+/* card com borda rotativa - AGORA 350x350 */
+.card2 {
+    width: 350px;
+    height: 350px;
+    background: #171717;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0px 0px 3px 1px #00000088;
+    cursor: pointer;
+  }
+  
+  /* Parte interna da card */
+  .card2 .content2 {
+    border-radius: 0;
+    background: #171717;
+    width: 330px;
+    height: 330px;
+    z-index: 1;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  /* Brilho interno */
+  .content2::before {
+    opacity: 1;
+    transition: opacity 300ms;
+    content: " ";
+    display: block;
+    background: white;
+    width: 5px;
+    height: 50px;
+    position: absolute;
+    filter: blur(50px);
+    overflow: hidden;
+  }
+  
+  /* Borda rotativa */
+  .card2::before {
+    opacity: 1;
+    content: " ";
+    position: absolute;
+    display: block;
+    width: 130px;
+    height: 460px;
+    background: linear-gradient(#ff2288, #387ef0);
+    animation: rotation_9018 8000ms infinite linear;
+    z-index: 0;
+  }
+  
+  /* camada de desfoque acima da borda rotativa */
+  .card2::after {
+    position: absolute;
+    content: " ";
+    display: block;
+    width: 370px;
+    height: 370px;
+    background: #17171733;
+    backdrop-filter: blur(50px);
+    z-index: 0;
+  }
+  
+  @keyframes rotation_9018 {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
