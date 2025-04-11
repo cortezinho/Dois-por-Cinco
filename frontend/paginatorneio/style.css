@@ -215,11 +215,11 @@
     position: relative;
     box-shadow: 0px 0px 3px 1px #00000088;
     cursor: pointer;
+    border-radius: 10px;
   }
   
   /* Parte interna da card */
   .card2 .content2 {
-    border-radius: 0;
     background: #171717;
     width: 330px;
     height: 330px;
@@ -251,7 +251,7 @@
     content: " ";
     position: absolute;
     display: block;
-    width: 130px;
+    width: 250px;
     height: 460px;
     background: linear-gradient(#ff2288, #387ef0);
     animation: rotation_9018 8000ms infinite linear;
