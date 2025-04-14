@@ -3,12 +3,10 @@ Este repositório contém o código-fonte de um sistema full stack que estamos d
 
 🚀 Tecnologias Utilizadas
 🖥️ Front-End (Web)
+
 JavaScript
-
 HTML5
-
 CSS3
-
 Tailwind CSS
 
 [Em breve] React Native (para desenvolvimento mobile)
@@ -21,7 +19,6 @@ Será utilizado para criar uma versão mobile nativa do sistema, com integraçã
 
 🛠️ Back-End
 Spring Framework (Spring Boot)
-
 Docker (para conteinerização e padronização do ambiente de desenvolvimento)
 
 A API será responsável por toda a lógica de negócio, autenticação, persistência de dados e integrações externas.
@@ -29,28 +26,6 @@ A API será responsável por toda a lógica de negócio, autenticação, persist
 🧪 Status do Projeto
 🔧 Em desenvolvimento.
 Estamos na fase inicial de implementação do front-end web e estruturação da API com Spring Boot. Em breve iniciaremos o desenvolvimento da aplicação mobile com React Native.
-
-📝 Como Contribuir
-Se você quiser colaborar com o projeto:
-
-Fork este repositório
-
-Crie sua branch (git checkout -b feature/nova-funcionalidade)
-
-Faça o commit das suas alterações (git commit -m 'Adiciona nova funcionalidade')
-
-Faça push para a branch (git push origin feature/nova-funcionalidade)
-
-Abra um Pull Request
-
-📌 Requisitos para rodar localmente
-Node.js
-
-Docker e Docker Compose
-
-JDK 17+
-
-IDE de sua preferência (VSCode, IntelliJ, etc.)
 
 💬 Contato
 Fique à vontade para abrir issues ou sugestões.
