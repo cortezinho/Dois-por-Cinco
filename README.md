@@ -1,40 +1,48 @@
-🌐 Sistema Web e Mobile — Projeto em Desenvolvimento
-Este repositório contém o código-fonte de um sistema full stack que estamos desenvolvendo, com suporte tanto para plataforma web quanto para mobile. O objetivo é criar uma aplicação moderna, responsiva e escalável, utilizando as melhores práticas de desenvolvimento e tecnologias atuais.
+# 🌐 SISTEMA DE ORGANIZAÇÃO DE EVENTOS DE GAMES — PROJETO EM DESENVOLVIMENTO
 
-🚀 Tecnologias Utilizadas
-🖥️ Front-End (Web)
-JavaScript
+**Este repositório contém o código-fonte de um sistema FULL STACK que estamos desenvolvendo, com suporte tanto para plataforma WEB quanto para MOBILE. O objetivo é criar uma aplicação moderna, responsiva e escalável, utilizando as melhores práticas de desenvolvimento e tecnologias atuais para transformar a experiência dos jogadores e organizadores de eventos de eSports.**
 
-HTML5
+---
 
-CSS3
+## 🚀 TECNOLOGIAS UTILIZADAS
 
-Tailwind CSS
+### 🖥️ FRONT-END (WEB)
 
-[Em breve] React Native (para desenvolvimento mobile)
+- **JavaScript**
+- **HTML5**
+- **CSS3**
+- **Tailwind CSS**
+- **[Em breve] React Native** (para desenvolvimento MOBILE)
 
-O front-end está sendo desenvolvido com foco em performance e responsividade, garantindo uma boa experiência do usuário em diferentes dispositivos.
+**O front-end está sendo desenvolvido com foco em PERFORMANCE e RESPONSIVIDADE, garantindo uma experiência de usuário impecável em todos os dispositivos.**
 
-📱 Mobile (Em breve)
-React Native
-Será utilizado para criar uma versão mobile nativa do sistema, com integração à mesma base de dados e lógica do sistema web.
+---
 
-🛠️ Back-End
-Spring Framework
+### 📱 MOBILE (EM BREVE)
 
-Spring Boot
+- **React Native** — Para criar uma versão MOBILE nativa do sistema, com total integração à base de dados e lógica do sistema WEB.
 
-MySQL (banco de dados relacional)
+---
 
-Docker (para conteinerização e padronização do ambiente de desenvolvimento)
+### 🛠️ BACK-END
 
-A API será responsável por toda a lógica de negócio, autenticação, persistência de dados e integrações externas. O MySQL será utilizado como banco de dados principal, estruturado para garantir desempenho e integridade das informações.
+- **Spring Framework**
+- **Spring Boot**
+- **MySQL** (Banco de dados relacional)
+- **Docker** (Para conteinerização e padronização do ambiente de desenvolvimento)
 
-🧪 Status do Projeto
-🔧 Em desenvolvimento.
-Estamos na fase inicial de implementação do front-end web e estruturação da API com Spring Boot. Em breve iniciaremos o desenvolvimento da aplicação mobile com React Native.
+**A API será responsável por toda a lógica de negócio, AUTENTICAÇÃO, persistência de dados e integrações externas. O MySQL será utilizado como banco de dados PRINCIPAL, estruturado para garantir DESEMPENHO e INTEGRIDADE das informações.**
 
-💬 Contato
-Fique à vontade para abrir issues ou sugestões.
-Desenvolvido com 💙 pela equipe.
+---
 
+## 🧪 STATUS DO PROJETO
+
+🔧 **EM DESENVOLVIMENTO.**  
+Atualmente, estamos na fase inicial da implementação do front-end WEB e na estruturação da API com Spring Boot. Em breve, iniciaremos o desenvolvimento da versão MOBILE com React Native.
+
+---
+
+## 💬 CONTATO
+
+Fique à vontade para abrir **issues**, sugestões ou contribuições!  
+**Desenvolvido com 💙 pela equipe do CFP-Paraíso.**
