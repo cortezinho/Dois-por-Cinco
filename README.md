@@ -46,3 +46,7 @@ Atualmente, estamos na fase inicial da implementação do front-end WEB e na est
 
 Fique à vontade para abrir **issues**, sugestões ou contribuições!  
 **Desenvolvido com 💙 pela equipe do CFP-Paraíso.**
+
+## LINK DO PROJETO
+
+https://plataforma.gpinovacao.senai.br/plataforma/demandas-da-industria/interna/11035
