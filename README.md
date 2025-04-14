@@ -3,10 +3,12 @@ Este repositório contém o código-fonte de um sistema full stack que estamos d
 
 🚀 Tecnologias Utilizadas
 🖥️ Front-End (Web)
-
 JavaScript
+
 HTML5
+
 CSS3
+
 Tailwind CSS
 
 [Em breve] React Native (para desenvolvimento mobile)
@@ -18,10 +20,15 @@ React Native
 Será utilizado para criar uma versão mobile nativa do sistema, com integração à mesma base de dados e lógica do sistema web.
 
 🛠️ Back-End
-Spring Framework (Spring Boot)
+Spring Framework
+
+Spring Boot
+
+MySQL (banco de dados relacional)
+
 Docker (para conteinerização e padronização do ambiente de desenvolvimento)
 
-A API será responsável por toda a lógica de negócio, autenticação, persistência de dados e integrações externas.
+A API será responsável por toda a lógica de negócio, autenticação, persistência de dados e integrações externas. O MySQL será utilizado como banco de dados principal, estruturado para garantir desempenho e integridade das informações.
 
 🧪 Status do Projeto
 🔧 Em desenvolvimento.
