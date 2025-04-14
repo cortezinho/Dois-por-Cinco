@@ -4,6 +4,27 @@
 
 ---
 
+## 🎯 DESAFIO ATRIBUÍDO
+
+**Desenvolver um Sistema de Organização de Eventos de Games** para facilitar o cadastro e gerenciamento de competições, jogadores e organizadores de torneios. O sistema foi concebido para otimizar a experiência de eventos online e presenciais, com foco na interface do usuário e na integração de funcionalidades essenciais para garantir uma gestão eficiente e transparente.
+
+### **Funcionalidades Principais:**
+
+- **Cadastro de Eventos e Competições**: Organizar e divulgar eventos de games com informações detalhadas sobre datas, horários, modalidades e requisitos para participação.
+- **Gestão de Inscrições**: Permitir a inscrição de jogadores e equipes de forma simples e eficiente, com controle de vagas e categorias.
+- **Acompanhamento de Torneios**: Monitorar e atualizar os resultados em tempo real, criando uma tabela de classificação acessível aos participantes e espectadores.
+- **Cadastro de Jogadores e Organizadores**: Gerenciar perfis de jogadores e organizadores, com histórico de participações, classificações e desempenho.
+- **Comunicação e Notificações**: Facilitar a comunicação entre jogadores, organizadores e equipes, com envio de notificações sobre atualizações e resultados.
+- **Relatórios e Estatísticas**: Gerar relatórios detalhados sobre o desempenho dos jogadores, equipes e eventos, ajudando os organizadores a avaliar o sucesso e planejar futuras competições.
+
+### **Tecnologias e Funcionalidades Adicionais:**
+- **Integração com plataformas de jogos populares** (ex.: Steam, Epic Games) para sincronização de partidas e resultados.
+- **Controle de segurança e autenticação** para garantir que apenas jogadores e organizadores autorizados acessem suas respectivas áreas.
+- **Sistema de pagamento integrado** para inscrição em eventos pagos, com gateways de pagamento confiáveis.
+- **Limitações de uso**: Dependendo do plano, o sistema terá limites no número de eventos simultâneos ou inscrições.
+
+---
+
 ## 🚀 TECNOLOGIAS UTILIZADAS
 
 ### 🖥️ FRONT-END (WEB)
@@ -46,6 +67,7 @@ Atualmente, estamos na fase inicial da implementação do front-end WEB e na est
 
 Fique à vontade para abrir **issues**, sugestões ou contribuições!  
 **Desenvolvido com 💙 pela equipe do CFP-Paraíso.**
+
 
 ## LINK DO PROJETO
 
