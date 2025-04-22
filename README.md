@@ -33,7 +33,6 @@
 - **HTML5**
 - **CSS3**
 - **Tailwind CSS**
-- **[Em breve] React Native** (para desenvolvimento MOBILE)
 
 **O front-end está sendo desenvolvido com foco em PERFORMANCE e RESPONSIVIDADE, garantindo uma experiência de usuário impecável em todos os dispositivos.**
 
