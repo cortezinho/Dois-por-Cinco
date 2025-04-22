@@ -66,7 +66,7 @@ Atualmente, estamos na fase inicial da implementação do front-end WEB e na est
 ## 💬 CONTATO
 
 Fique à vontade para abrir **issues**, sugestões ou contribuições!  
-**Desenvolvido com 💙 pela equipe do CFP-Paraíso.**
+**Desenvolvido com 💙 pela equipe do Dois Por Cinco.**
 
 
 ## LINK DO PROJETO
