@@ -33,7 +33,6 @@
 - **HTML5**
 - **CSS3**
 - **Tailwind CSS**
-- **[Em breve] React Native** (para desenvolvimento MOBILE)
 
 **O front-end está sendo desenvolvido com foco em PERFORMANCE e RESPONSIVIDADE, garantindo uma experiência de usuário impecável em todos os dispositivos.**
 
@@ -66,7 +65,7 @@ Atualmente, estamos na fase inicial da implementação do front-end WEB e na est
 ## 💬 CONTATO
 
 Fique à vontade para abrir **issues**, sugestões ou contribuições!  
-**Desenvolvido com 💙 pela equipe do CFP-Paraíso.**
+**Desenvolvido com 💙 pela equipe do Dois Por Cinco.**
 
 
 ## LINK DO PROJETO
