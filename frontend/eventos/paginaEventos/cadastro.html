@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Eventos de Games</title>
+    <link rel="stylesheet" href="./style/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Cadastro de Eventos</h1>
+    </header>
+
+    <!-- Cadastro de Evento -->
+    <section id="evento">
+        <h2>Cadastrar Novo Evento</h2>
+        <form id="formEvento">
+            <label for="nomeEvento">Nome do Evento:</label>
+            <input type="text" id="nomeEvento" required>
+
+            <label for="modalidadeEvento">Modalidade:</label>
+            <input type="text" id="modalidadeEvento" required>
+
+            <label for="requisitosEvento">Requisitos:</label>
+            <textarea id="requisitosEvento" required></textarea>
+
+            <button type="submit">Cadastrar Evento</button>
+            <br>  <br>  <br>
+            <div id="res">
+
+            </div>
+        </form>
+    </section>
+
+    <script src="./script/cadastro.js"></script>
+</body>
+</html>
