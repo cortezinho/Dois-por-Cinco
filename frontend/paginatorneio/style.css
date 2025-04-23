@@ -2,9 +2,9 @@
 .cards {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Maior espaçamento entre os cards */
+    gap: 15px; /* Maior espaçamento entre os cards */
     justify-content: center; /* Para garantir que os cards fiquem alinhados no centro */
-    padding: 20px;
+    padding: 19px;
 }
 
 /* Card individual */
@@ -14,8 +14,8 @@
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    height: 250px; /* Mantém o tamanho fixo de altura */
-    width: 250px;  /* Largura de 250px por card */
+    height: 210px; /* Mantém o tamanho fixo de altura */
+    width: 210px;  /* Largura de 250px por card */
     border-radius: 10px;
     color: white;
     cursor: pointer;
@@ -142,7 +142,7 @@
 /* From Uiverse.io by Cevorob */
 .button1 {
     position: relative;
-    height: 50px;
+    height: 45px;
     padding: 0 30px;
     border: 2px solid #ffffff;
     background: #000000;
@@ -203,10 +203,10 @@
 }
 
 
-/* card com borda rotativa - AGORA 350x350 */
+/* card com borda rotativa - AGORA 750x500 */
 .card2 {
-    width: 350px;
-    height: 350px;
+    width: 750px;
+    height: 500px;
     background: #171717;
     display: flex;
     justify-content: center;
@@ -216,23 +216,23 @@
     box-shadow: 0px 0px 3px 1px #00000088;
     cursor: pointer;
     border-radius: 10px;
-  }
-  
-  /* Parte interna da card */
-  .card2 .content2 {
+}
+
+/* Parte interna da card */
+.card2 .content2 {
     background: #171717;
-    width: 330px;
-    height: 330px;
+    width: 730px;
+    height: 480px;
     z-index: 1;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-  }
-  
-  /* Brilho interno */
-  .content2::before {
+}
+
+/* Brilho interno */
+.content2::before {
     opacity: 1;
     transition: opacity 300ms;
     content: " ";
@@ -243,40 +243,39 @@
     position: absolute;
     filter: blur(50px);
     overflow: hidden;
-  }
-  
-  /* Borda rotativa */
-  .card2::before {
+}
+
+/* Borda rotativa */
+.card2::before {
     opacity: 1;
     content: " ";
     position: absolute;
     display: block;
-    width: 250px;
-    height: 460px;
-    background: linear-gradient(#ff2288, #387ef0);
+    width: 400px;
+    height: 900px;
+    background: linear-gradient(#ff0077, #0062ff);
     animation: rotation_9018 8000ms infinite linear;
     z-index: 0;
-  }
-  
-  /* camada de desfoque acima da borda rotativa */
-  .card2::after {
+}
+
+/* camada de desfoque acima da borda rotativa */
+.card2::after {
     position: absolute;
     content: " ";
     display: block;
-    width: 370px;
-    height: 370px;
+    width: 770px;
+    height: 520px;
     background: #17171733;
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(10px);
     z-index: 0;
-  }
-  
-  @keyframes rotation_9018 {
+}
+
+@keyframes rotation_9018 {
     0% {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
-  
+
     100% {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
-  
+}
