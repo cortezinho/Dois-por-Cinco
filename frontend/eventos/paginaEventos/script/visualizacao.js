@@ -1,8 +1,16 @@
 window.onload = function () {
+    renderizarEventos();
+    monitorarAtualizacoesEventos(); // Liga o modo ao vivo!
+};
+
+function renderizarEventos() {
+    const container = document.getElementById('eventosListados');
+    container.innerHTML = ''; // Limpa antes de recriar tudo
+
     let eventosCadastrados = JSON.parse(localStorage.getItem('eventos')) || [];
 
     if (eventosCadastrados.length === 0) {
-        document.getElementById('eventosListados').innerHTML = '<p>Não há eventos cadastrados.</p>';
+        container.innerHTML = '<p>Não há eventos cadastrados.</p>';
         return;
     }
 
@@ -14,7 +22,9 @@ window.onload = function () {
         let participantesHTML = '';
         if (evento.participantes && evento.participantes.length > 0) {
             evento.participantes.forEach(participante => {
-                participantesHTML += `<p><strong>${participante.nome}</strong> (${participante.equipe})</p>`;
+                // Garante que o nome da equipe seja mostrado corretamente, mesmo se estiver faltando
+                const nomeEquipe = participante.equipe ? participante.equipe : 'Equipe desconhecida';
+                participantesHTML += `<p><strong>Time:</strong> ${nomeEquipe}</p>`;
             });
         } else {
             participantesHTML = '<p>Sem participantes cadastrados.</p>';
@@ -26,11 +36,13 @@ window.onload = function () {
         vencedorLabel.style.marginTop = '10px';
 
         const selectVencedor = document.createElement('select');
-        selectVencedor.style.padding = '8px';
-        selectVencedor.style.border = '1px solid #ccc';
-        selectVencedor.style.borderRadius = '4px';
-        selectVencedor.style.marginTop = '5px';
-        selectVencedor.style.width = '100%';
+        Object.assign(selectVencedor.style, {
+            padding: '8px',
+            border: '1px solid #ccc',
+            borderRadius: '4px',
+            marginTop: '5px',
+            width: '100%',
+        });
 
         const defaultOption = document.createElement('option');
         defaultOption.value = '';
@@ -40,9 +52,9 @@ window.onload = function () {
         if (evento.participantes && evento.participantes.length > 0) {
             evento.participantes.forEach(participante => {
                 const option = document.createElement('option');
-                option.value = participante.nome;
-                option.textContent = `${participante.nome} (${participante.equipe})`;
-                if (evento.resultado === participante.nome) {
+                option.value = participante.equipe;
+                option.textContent = `${participante.equipe}`;
+                if (evento.resultado === participante.equipe) {
                     option.selected = true;
                 }
                 selectVencedor.appendChild(option);
@@ -51,13 +63,15 @@ window.onload = function () {
 
         const salvarResultadoBtn = document.createElement('button');
         salvarResultadoBtn.textContent = 'Salvar Resultado';
-        salvarResultadoBtn.style.marginTop = '10px';
-        salvarResultadoBtn.style.backgroundColor = '#3498db';
-        salvarResultadoBtn.style.color = 'white';
-        salvarResultadoBtn.style.border = 'none';
-        salvarResultadoBtn.style.padding = '8px 16px';
-        salvarResultadoBtn.style.borderRadius = '6px';
-        salvarResultadoBtn.style.cursor = 'pointer';
+        Object.assign(salvarResultadoBtn.style, {
+            marginTop: '10px',
+            backgroundColor: '#3498db',
+            color: 'white',
+            border: 'none',
+            padding: '8px 16px',
+            borderRadius: '6px',
+            cursor: 'pointer',
+        });
 
         const res = document.createElement('div');
         res.id = `res-${index}`;
@@ -76,43 +90,53 @@ window.onload = function () {
             res.innerHTML = `Vencedor salvo: <strong>${vencedorSelecionado}</strong>`;
         };
 
-        // Preenche o HTML do evento
-        eventoBox.innerHTML = `
-            <h3><strong>[COMPETIÇÃO]</strong> ${evento.nome}</h3>
-            <p><strong>Modalidade:</strong> ${evento.modalidade}</p>
-            <p class="requisitos"><strong>Requisitos:</strong> ${evento.requisitos}</p>
-            <h4>Participantes:</h4>
-            ${participantesHTML}
-        `;
-
-        // Botão de deletar
         const btnDeletar = document.createElement('button');
         btnDeletar.textContent = ' Deletar';
-        btnDeletar.style.marginTop = '10px';
-        btnDeletar.style.alignSelf = 'flex-start';
-        btnDeletar.style.backgroundColor = '#e74c3c';
-        btnDeletar.style.border = 'none';
-        btnDeletar.style.padding = '8px 16px';
-        btnDeletar.style.color = 'white';
-        btnDeletar.style.borderRadius = '6px';
-        btnDeletar.style.cursor = 'pointer';
+        Object.assign(btnDeletar.style, {
+            marginTop: '10px',
+            backgroundColor: '#e74c3c',
+            border: 'none',
+            padding: '8px 16px',
+            color: 'white',
+            borderRadius: '6px',
+            cursor: 'pointer',
+        });
 
         btnDeletar.onclick = () => {
             if (confirm(`Tem certeza que quer deletar o evento "${evento.nome}"?`)) {
                 eventosCadastrados.splice(index, 1);
                 localStorage.setItem('eventos', JSON.stringify(eventosCadastrados));
-                location.reload();
+                renderizarEventos(); // Atualiza sem recarregar
             }
         };
 
-        // Adiciona elementos ao evento
+        eventoBox.innerHTML = `
+            <h3><strong>[COMPETIÇÃO]</strong> ${evento.nome}</h3>
+            <p><strong>Modalidade:</strong> ${evento.modalidade}</p>
+            <p class="requisitos"><strong>Requisitos:</strong> ${evento.requisitos}</p>
+            <br>
+            <h4>Participantes:</h4>
+            ${participantesHTML}
+        `;
+
         eventoBox.appendChild(vencedorLabel);
         eventoBox.appendChild(selectVencedor);
         eventoBox.appendChild(salvarResultadoBtn);
         eventoBox.appendChild(res);
         eventoBox.appendChild(btnDeletar);
 
-        // Mostra na tela
-        document.getElementById('eventosListados').appendChild(eventoBox);
+        container.appendChild(eventoBox);
     });
-};
+}
+
+function monitorarAtualizacoesEventos(intervalo = 1000) {
+    let cache = localStorage.getItem('eventos');
+
+    setInterval(() => {
+        const atual = localStorage.getItem('eventos');
+        if (atual !== cache) {
+            cache = atual;
+            renderizarEventos(); // Atualiza só se mudou
+        }
+    }, intervalo);
+}

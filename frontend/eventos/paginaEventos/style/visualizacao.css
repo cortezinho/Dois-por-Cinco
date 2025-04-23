@@ -1,0 +1,111 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: #fff;
+    min-height: 100vh;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #00ffe7;
+    text-shadow: 0 0 12px #00ffe7;
+}
+
+/* Lista de eventos */
+#eventosListados {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Caixa de cada evento */
+.boxEvento {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 255, 231, 0.15);
+    border: 1px solid rgba(0, 255, 231, 0.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+.boxEvento:hover {
+    transform: scale(1.02);
+}
+
+.boxEvento h3 {
+    font-size: 1.4rem;
+    color: #00ffe7;
+    margin-bottom: 10px;
+}
+
+.boxEvento p {
+    margin: 5px 0;
+}
+
+.boxEvento .requisitos {
+    font-style: italic;
+    color: #ccc;
+}
+
+/* Botões */
+button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Botão de salvar */
+button:contains("Salvar Resultado") {
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    color: white;
+}
+
+/* Botão de deletar */
+button:contains("Deletar") {
+    background: linear-gradient(to right, #ff4e50, #f9d423);
+    color: black;
+}
+
+/* Select */
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #2c2c2c;
+    color: #fff;
+}
+
+/* Resultado */
+[id^="res-"] {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #00ff7f;
+}

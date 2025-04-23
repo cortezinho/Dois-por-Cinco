@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Eventos de Games</title>
-    <link rel="stylesheet" href="./style/styles.css">
+    <link rel="stylesheet" href="./style/participantes.css">
 </head>
 <body>
     <header>
@@ -13,11 +13,9 @@
     <section id="inscricao">
         <h2>Inscrição de Participantes</h2>
         <form id="formInscricao">
-            <label for="nomeParticipante">Nome do Participante:</label>
-            <input type="text" id="nomeParticipante" required>
 
-            <label for="equipeParticipante">Equipe (se houver):</label>
-            <input type="text" id="equipeParticipante">
+            <label for="equipeParticipante">Equipe:</label>
+            <input type="text" id="equipeParticipante" required>
 
             <label for="eventoParticipante">Escolha o Evento:</label>
             <select id="eventoParticipante" required></select>
@@ -32,10 +30,7 @@
             <thead>
                 <tr>
                     <th>Evento</th>
-                    <br/>
                     <th>Equipe</th>
-                    <br/>
-                    <th>Jogador</th>
                 </tr>
             </thead>
             <tbody>
