@@ -5,7 +5,9 @@ import backendProjeto.backendProjeto.model.Usuario;
 import backendProjeto.backendProjeto.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
+import java.net.PasswordAuthentication;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,12 +17,15 @@ public class UsuarioService {
    @Autowired
     private UsuarioRepository usuarioRepository;
 
+   @Autowired
+   private PasswordEncoder passwordEncoder;
+
    public  Usuario fromDTO(RegistroDTO registroDTO){
         Usuario usuario = new Usuario();
         usuario.setNome(registroDTO.getNome());
         usuario.setCpf(registroDTO.getCpf());
         usuario.setEmail(registroDTO.getEmail());
-        usuario.setSenha(registroDTO.getSenha());
+        usuario.setSenha(passwordEncoder.encode(registroDTO.getSenha()));
 
         return usuario;
    }
@@ -34,7 +39,6 @@ public class UsuarioService {
        registroDTO.setCpf(usuario.getCpf());
        registroDTO.setEmail(usuario.getEmail());
        registroDTO.setNome(usuario.getNome());
-       registroDTO.setSenha(usuario.getSenha());
 
        return registroDTO;
    }
@@ -44,12 +48,15 @@ public class UsuarioService {
         return this.toDTO(usuarioBd);
     }
 
-    public Usuario login(String nome, String senha) {
-        Usuario usuario = usuarioRepository.findByNome(nome);
-        if (usuario != null && usuario.getSenha().equals(senha)) {
-            return usuario;
+    public Usuario login(String email, String senha) {
+        Usuario usuario = usuarioRepository.findByEmail(email)
+                .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+
+        if (!passwordEncoder.matches(senha, usuario.getSenha())) {
+            throw new RuntimeException("Senha incorreta");
         }
-        return null;
+
+        return usuario;
     }
 
    public Optional<RegistroDTO> updateUsuario(Long id, RegistroDTO registroDTO) {
@@ -59,8 +66,7 @@ public class UsuarioService {
            usuario.setNome(usuario.getNome());
            usuario.setCpf(usuario.getCpf());
            usuario.setEmail(usuario.getEmail());
-           usuario.setSenha(usuario.getSenha());
-
+           usuario.setSenha(passwordEncoder.encode(registroDTO.getSenha()));
            Usuario usuarioUpdate = usuarioRepository.save(usuario);
 
            return Optional.of(this.toDTO(usuarioUpdate));

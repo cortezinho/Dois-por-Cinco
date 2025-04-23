@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: senhaprojeto
+      MYSQL_DATABASE: projetoGames
+      MYSQL_USER: doisporcinco
+      MYSQL_PASSWORD: mysql123
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  app:
+    build: ./backend/springProject/backendProjeto/backendProjeto
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/projetoGames
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 123456
+      JWT_SECRET: 7A2B4C6E8F0A1B3D5E7F9A0B2C4D6E8F0A1B3D5E7F9A0B2C4D6E8F0A1B3D5E7F9
+    depends_on:
+       db:
+        condition: service_healthy
+
+volumes:
+  mysql_data:
