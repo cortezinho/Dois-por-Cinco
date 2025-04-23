@@ -1,0 +1,42 @@
+/* Definindo o estilo do corpo da página */
+body {
+    font-family: 'Inter', sans-serif;
+    background-image: url('../images/backg.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 120vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  /* Posicionamento da foto de perfil */
+  .profile-container {
+    position: absolute;
+    top: 9rem;  /* ajusta a posição vertical */
+    right: 13.5rem; /* ajusta a posição horizontal */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  /* Estilos para a foto de perfil */
+  .profile-img {
+    width: 8rem; /* 24 Tailwind equivale a 6rem */
+    height: 8rem; /* 24 Tailwind equivale a 6rem */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid black;
+  }
+  
+  /* Estilo do texto */
+  .text-content {
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
