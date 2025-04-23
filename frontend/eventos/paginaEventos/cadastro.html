@@ -19,11 +19,22 @@
             <input type="text" id="nomeEvento" required>
 
             <label for="modalidadeEvento">Modalidade:</label>
-            <input type="text" id="modalidadeEvento" required>
-
-            <label for="requisitosEvento">Requisitos:</label>
-            <textarea id="requisitosEvento" required></textarea>
-
+            <select id="modalidadeEvento" required>
+                <option value="">Selecione uma modalidade</option>
+                <option value="Free Fire">Free Fire</option>
+                <option value="Valorant">Valorant</option>
+                <option value="League of Legends">League of Legends</option>
+                <option value="CS2">CS2</option>
+                <option value="FIFA">FIFA</option>
+                <option value="Just Dance">Just Dance</option>
+            </select>
+            <label>Requisitos:</label>
+            <div id="requisitosEvento">
+                <label><input type="checkbox" value="18 Anos"> 18 anos +</label><br>
+                <label><input type="checkbox" value="Ter equipe"> Ter equipe</label><br>
+                <label><input type="checkbox" value="Discord"> Discord</label><br>
+            </div>
+            <br><br>
             <button type="submit">Cadastrar Evento</button>
             <br>  <br>  <br>
             <div id="res">

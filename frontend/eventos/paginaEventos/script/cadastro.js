@@ -3,9 +3,18 @@ document.getElementById('formEvento').addEventListener('submit', function(event)
 
     const nomeEvento = document.getElementById('nomeEvento').value;
     const modalidadeEvento = document.getElementById('modalidadeEvento').value;
-    const requisitosEvento = document.getElementById('requisitosEvento').value;
     const res = document.getElementById('res');
 
+    const checkboxes = document.querySelectorAll('#requisitosEvento input[type="checkbox"]');
+    const requisitosEvento = Array.from(checkboxes)
+    .filter(checkbox => checkbox.checked)
+    .map(checkbox => checkbox.value);
+
+    if (requisitosEvento.length === 0) {
+        res.innerHTML = "Selecione pelo menos um requisito.";
+        return;
+    }
+    
     const eventoId = new Date().getTime();  // ID único para o evento
 
     const evento = {
