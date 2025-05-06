@@ -173,10 +173,6 @@
     left: 8px;
    }
    
-   .button1:hover {
-    cursor: crosshair;
-   }
-   
    .button1:active {
     transform: scale(0.95);
    }
