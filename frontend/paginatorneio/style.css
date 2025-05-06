@@ -140,63 +140,89 @@
     transform: translate(-50%, -50%) scale(2);
 }
 /* From Uiverse.io by Cevorob */
+
+
+/* Botão1 */
 .button1 {
     position: relative;
-    height: 45px;
-    padding: 0 30px;
+    height: 70px;               /* Altura aumentada */
+    width: 300px;               /* Largura aumentada */
+    padding: 0 60px;            /* Espaçamento lateral aumentado */
     border: 2px solid #ffffff;
     background: #000000;
     user-select: none;
     white-space: nowrap;
     transition: all .05s linear;
     font-family: inherit;
-   }
-   
-   .button1:before, .button1:after {
+    font-size: 22px;            /* Fonte aumentada */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Efeitos visuais do botão */
+.button1:before,
+.button1:after {
     content: "";
     position: absolute;
     background: #000000;
     transition: all .2s linear;
-   }
-   
-   .button1:before {
+}
+
+.button1:before {
     width: calc(100% + 6px);
     height: calc(100% - 16px);
     top: 8px;
     left: -3px;
-   }
-   
-   .button1:after {
+}
+
+.button1:after {
     width: calc(100% - 16px);
     height: calc(100% + 6px);
     top: -3px;
     left: 8px;
-   }
-   
-   .button1:active {
+}
+
+.button1:active {
     transform: scale(0.95);
-   }
-   
-   .button1:hover:before {
+}
+
+.button1:hover:before {
     height: calc(100% - 32px);
     top: 16px;
-   }
-   
-   .button1:hover:after {
+}
+
+.button1:hover:after {
     width: calc(100% - 32px);
     left: 16px;
-   }
-   
-   .button1 span {
-    font-size: 15px;
+}
+
+/* Texto do botão com fonte maior */
+.button1 span {
+    font-size: 22px;           /* Fonte maior */
     z-index: 3;
     position: relative;
     font-weight: 600;
-   }
+}
 
-.span-button1{
+.span-button1 {
     color: #ffffff;
 }
+
+@media (max-width: 640px) {
+    .button1 {
+      width: 100%;
+      font-size: 18px;
+      height: 60px;
+      padding: 0;
+    }
+  
+    .button1 span {
+      font-size: 18px;
+    }
+  }
+  
+
 
 
 /* card com borda rotativa - AGORA 750x500 */
